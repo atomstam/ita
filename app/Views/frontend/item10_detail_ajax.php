@@ -261,7 +261,7 @@
 				  	sClass:"text-center",
 					render:function(data,type,row){
 						var dataItID = row['iu_id'];
-						var dataItGr = 9;
+						var dataItGr = 10;
                         var dataItArea = row['iu_area'];
                         var dataItSch = row['iu_school'];
 						var dataItMain = row['iu_main'];

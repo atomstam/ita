@@ -101,4 +101,41 @@ class Pages extends Controller {
         
     }
 
+
+    public function Item10_detail($main = null,$sub = null,$cate = null) {
+            $itemsModel = new ItemModel;
+            $itemsubModel = new ItemsubModel;
+            $itemupModel = new ItemupModel;
+            
+            $subName = $itemsubModel->getItemSubAllByMainBySub($main,$sub);
+			$subNameCate = $itemsModel->getItemByMainBySubByCate($main,$sub,$cate);
+
+            $data = [
+                'item' => 10,
+                'itemall' => $itemsModel->getItemAllByMainBySub($main,$sub),
+				'itemsuball' => $itemupModel->getItemAllByMainBySubByCate($main,$sub,$cate),
+                'main' => $main,
+                'sub' => $sub,
+                'cate' => $cate,
+				'gr' => '10',
+                'title' => [
+                    '1' => 'จัดการระบบ',
+                    '2' => 'การป้องกันการทุจริต',
+                    '3' => $subName['is_category_name'],
+                    '4' => $subNameCate['it_topic']
+                ],                
+				'url' => [
+                    '1' => "",
+                    '2' => base_url(session()->get('role') . '/item10/'),
+                    '3' => base_url(session()->get('role') . '/item10/'.$main.'/'.$sub),
+                    '4' => ""
+                ]
+            ];
+
+        echo view('templates/frontend/header', $data);
+        echo view('frontend/item10_detail_ajax');
+        echo view('templates/frontend/footer');
+        
+    }
+
 }
