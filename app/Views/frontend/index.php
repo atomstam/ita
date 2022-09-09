@@ -82,7 +82,8 @@
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
             <h2 data-aos="fade-down">ขอต้อนรับสู่ระบบ <span>ITA</span></h2>
-            <p data-aos="fade-up">เป็นระบบสำหรับรวบรวมร่องรอยในรูปแบบไฟล์เอกสาร ไฟล์รูปภาพ และอื่นๆ เพื่อรองรับการประเมิน ITA ของโรงเรียน</p>
+            <p data-aos="fade-up">การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ<br>(Integrity and Transparency Assessment : ITA)</p>
+			<p data-aos="fade-up">ระบบนี้เป็นระบบสำหรับรวบรวมร่องรอยในรูปแบบไฟล์เอกสาร ไฟล์รูปภาพ และอื่นๆ เพื่อรองรับการประเมิน ITA ของโรงเรียน</p>
             <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
           </div>
         </div>
@@ -166,8 +167,8 @@
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>ITA</h2>
-          <p>หัวข้อประเมิน</p>
+          <h2> OIT </h2>
+          <p>แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT) มีวัตถุประสงค์เพื่อเป็นการประเมินระดับการเปิดเผยข้อมูลต่อสาธารณะของหน่วยงาน เพื่อให้ประชาชนทั่วไปสามารถเข้าถึงได้ ในตัวชี้วัดการเปิดเผยข้อมูล และการป้องกันการทุจริต สำหรับการประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (ITA)</p>
         </div>
         <div class="accordion" id="accordionExample">
         <?php foreach ($itemsub as $key => $itemall_item) : $aa=$key+1;?>

@@ -2,8 +2,8 @@
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>ITA</h2>
-          <p>หัวข้อประเมิน</p>
+          <h2> OIT </h2>
+          <p>แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT) มีวัตถุประสงค์เพื่อเป็นการประเมินระดับการเปิดเผยข้อมูลต่อสาธารณะของหน่วยงาน เพื่อให้ประชาชนทั่วไปสามารถเข้าถึงได้ ในตัวชี้วัดการเปิดเผยข้อมูล และการป้องกันการทุจริต สำหรับการประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (ITA)</p>
         </div>
 		<div class="row">
             <div class="col-lg-12">
