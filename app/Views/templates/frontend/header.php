@@ -74,8 +74,9 @@ $request = service('request');
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="<?=base_url();?>" class="active">Home</a></li>
-          <li><a href="<?=base_url();?>/login">Login</a></li>
+          <li><a href="<?=base_url();?>" class="active">หน้าแรก</a></li>
+          <li><a href="<?=base_url();?>/complaint">ส่งเรื่องร้องเรียน</a></li>
+          <li><a href="<?=base_url();?>/login">เข้าระบบ</a></li>
         </ul>
       </nav><!-- .navbar -->
 

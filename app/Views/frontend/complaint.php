@@ -1,5 +1,5 @@
-    <!-- ======= Services Section ======= -->
-    <section id="contact" class="contact">
+    <!-- ======= complaint Section ======= -->
+    <section id="complaint" class="contact">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="section-header">
           <h2> <?=$title[1];?> </h2>
@@ -118,4 +118,7 @@
 		});
 	});
 
+	$(function () {
+	  $('[data-mask]').inputmask()
+	})
 	</script>
