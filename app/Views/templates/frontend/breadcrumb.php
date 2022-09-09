@@ -1,6 +1,4 @@
 <?php $request = service('request'); ?>
-
-
 <section>
     <div class="sptb-2 bannerimg">
         <div class="header-text mb-0">

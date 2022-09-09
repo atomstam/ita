@@ -61,11 +61,18 @@
 
   <div id="preloader"></div>
 
+
+  <script src="<?= base_url(); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="<?= base_url(); ?>/plugins/aos/aos.js"></script>
   <script src="<?= base_url(); ?>/plugins/glightbox/js/glightbox.min.js"></script>
   <script src="<?= base_url(); ?>/plugins/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="<?= base_url(); ?>/plugins/swiper/swiper-bundle.min.js"></script>
   <script src="<?= base_url(); ?>/plugins/purecounter/purecounter_vanilla.js"></script>
+    <!-- Sweet Alert -->
+  <script src="<?= base_url(); ?>/dash/js/plugin/sweetalert/sweetalert.min.js"></script>
+  <!-- InputMask -->
+  <script src="<?= base_url(); ?>/plugins/input-mask/jquery.maskedinput.js"></script>
+  <script src="<?= base_url(); ?>/plugins/php-email-form/validate.js"></script>
   <!-- Datatables -->
   <script src="<?= base_url() ?>/plugins/datatable/datatables.min.js"></script>
   <!--<script src="<?=base_url(); ?>/plugins/datatable/datatables.min.js" type="text/javascript"></script>-->

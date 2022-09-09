@@ -8,6 +8,7 @@ use App\Models\ItemcatModel;
 use App\Models\ItemmainModel;
 use App\Models\ItemsubModel;
 use App\Models\ItemupModel;
+use App\Models\CommModel;
 
 use CodeIgniter\Controller;
 
@@ -105,7 +106,6 @@ class Pages extends Controller {
         
     }
 
-
     public function Item10_detail($main = null,$sub = null,$cate = null) {
             $itemsModel = new ItemModel;
             $itemsubModel = new ItemsubModel;
@@ -141,5 +141,66 @@ class Pages extends Controller {
         echo view('templates/frontend/footer');
         
     }
+
+    public function Complaint() {
+
+            $data = [
+                'title' => [
+                    '1' => 'รับเรื่องร้องเรียน',
+                ],                
+				'url' => [
+                    '1' => '',
+                ]
+            ];
+
+        echo view('templates/frontend/header', $data);
+        echo view('frontend/complaint');
+        echo view('templates/frontend/footer');
+        
+    }
+
+
+	public function SaveComm()
+	{
+		$commModel = new CommModel;
+
+		$data = [
+			  'com_area' =>session()->get('area_code'),
+			  'com_school' =>session()->get('sch_code'),
+			  'com_name' =>$this->request->getVar('name'),
+			  'com_cardid' =>$this->request->getVar('cardid'),
+			  'com_address' =>$this->request->getVar('address'),
+			  'com_phone' =>$this->request->getVar('phone'),
+			  'com_email' =>$this->request->getVar('email'),
+			  'com_subject' =>$this->request->getVar('subject'),
+			  'com_message' =>$this->request->getVar('message'),
+			  'com_post_date' =>date('Y-m-d H:i:s'),
+			  'com_view' =>'0',
+			  'com_status' =>'1'
+		];
+
+        $up=$commModel->save($data);
+		$session = session();
+		if($up){
+			$data_c = [
+				'state' => "success",
+				'main' => $itemsId['it_main'],
+				'sub' => $itemsId['it_sub'],
+				'message' => 'ส่งข้อมูลสำเร็จ',
+				//'message' => $session->setFlashdata('msg', '<i class="fa fa-check-circle"></i> update สำเร็จ'),
+			];
+		} else {
+			$data_c = [
+				'state' => "error",
+				'main' => $itemsId['it_main'],
+				'sub' => $itemsId['it_sub'],
+				'message' => 'ไม่สามารถส่งข้อมูลได้',
+				//'message' => $session->setFlashdata('error', '<i class="fa fa-alert-circle"></i> ไม่สามารถ update ได้'),
+			];
+		}
+		echo json_encode($data_c);
+
+	}
+
 
 }

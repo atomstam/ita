@@ -163,8 +163,44 @@
       </div>
     </section><!-- End Stats Counter Section -->
 
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row p-0">
+          <div class="col-lg-4">
+            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-map text-info"></i>
+			  <a href="<?=base_url('complaint');?>" class="text-center">
+              <h3>ช่องทางร้องเรียน</h3>
+              <p><?=lang('Constant.webAuth_School');?></p>
+			  </a>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-envelope text-success"></i>
+              <h3>แสดงความคิดเห็น</h3>
+              <p><?=lang('Constant.email');?></p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-telephone text-danger"></i>
+              <h3>ถาม-ตอบ</h3>
+              <p>+66 <?=lang('Constant.phone');?></p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2> OIT </h2>

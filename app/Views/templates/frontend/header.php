@@ -16,9 +16,9 @@ $request = service('request');
   <link href="<?= base_url(); ?>/img/icon/favicon.ico" rel="icon">
   <link href="<?= base_url(); ?>/img/icon/apple-icon.png" rel="apple-touch-icon">
 
-	<!-- Google Font: Source Sans Pro -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;400&display=swap" rel="stylesheet">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="<?= base_url(); ?>/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,8 +52,10 @@ $request = service('request');
 				font-family: 'Prompt';
 			}
 	</style>
-  <!-- Vendor JS Files -->
-  <script src="<?= base_url(); ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="<?=base_url(); ?>/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="<?=base_url(); ?>/plugins/jquery-ui/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -79,8 +81,24 @@ $request = service('request');
 
     </div>
   </header><!-- End Header -->
+  <?php
+		$images = array('hero-carousel-1.jpg', 'hero-carousel-2.jpg', 'hero-carousel-3.jpg', 'hero-carousel-4.jpg', 'hero-carousel-5.jpg');
+		$random_image = array_rand($images);
+  ?>
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('<?= base_url(); ?>/front/img/hero-carousel-page/<?=$images[$random_image];?>');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-  <!-- ======= heromini Section ======= -->
+        <h2><?=$title[1]?></h2>
+        <ol>
+          <li><a href="<?= base_url();?>">Home</a></li>
+          <li><?=$title[1]?></li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+  <!-- ======= heromini Section ======= 
   <section id="heromini" class="heromini">
 
     <div id="heromini-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">

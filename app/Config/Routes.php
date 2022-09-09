@@ -46,6 +46,8 @@ $routes->group("", ["filter" => "alreadyLoggedin"], function ($routes) {
 $routes->get('/', 'Pages::index');
 $routes->get('/item9_detail/(:any)/(:any)/(:any)', 'Pages::Item9_detail/$1/$2/$3');
 $routes->get('/item10_detail/(:any)/(:any)/(:any)', 'Pages::Item10_detail/$1/$2/$3');
+$routes->get('/complaint', 'Pages::Complaint');
+$routes->post('/saveComm', 'Pages::SaveComm');
 
 $routes->get('/users', 'Users::index');
 
