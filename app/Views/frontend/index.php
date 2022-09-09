@@ -111,8 +111,59 @@
 
   <main id="main">
 
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter section-bg">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-file-pdf text-warning flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="<?=number_format($pdf);?>" data-purecounter-duration="1" class="purecounter"></span>
+                <p>ไฟล์ PDF</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-file-image text-success flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="<?=number_format($img);?>" data-purecounter-duration="1" class="purecounter"></span>
+                <p>ไฟล์รูปภาพ</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-file-word text-danger flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="<?=number_format($doc);?>" data-purecounter-duration="1" class="purecounter"></span>
+                <p>ไฟล์ Office</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="fas fa-link text-primary flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="<?=number_format($linkurl);?>" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Link</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <section id="services" class="services">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>ITA</h2>

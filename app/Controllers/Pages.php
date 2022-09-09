@@ -36,6 +36,10 @@ class Pages extends Controller {
 
         $data = [
 			//'users' => $usersModel->where('status', '1')->orderBy('id', 'desc')->findAll(5),
+            'pdf' => $ItemsupModel->RowTypeFile(1,'Upload'),
+            'img' => $ItemsupModel->RowTypeFile(2,'Upload'),
+            'doc' => $ItemsupModel->RowTypeFile(3,'Upload'),
+            'linkurl' => $ItemsupModel->RowTypeFile(4,'Link'),
             'item_1' => $ItemsModel->getItemAllByMainBySub(1,1),
             'item_2' => $ItemsModel->getItemAllByMainBySub(1,2),
             'item_3' => $ItemsModel->getItemAllByMainBySub(1,3),
