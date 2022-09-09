@@ -38,18 +38,18 @@
                   <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>--> 
                 </div>
 
-                <input type="submit" value="Log In" class="btn btn-block btn-primary">
+                <input type="submit" value="Log In" class="btn btn-block btn-info">
 
               </form>
             </div>
-                        <div class="font-size-sm mt-4 text-muted text-center">
-                            <strong><?php echo lang('Constant.webTitle_full');?> : <?php echo lang('Constant.webVersion');?> </strong><br>
-							<span ><?php echo lang('Constant.webAuth_School');?></span>
-							<span ><?php echo lang('Constant.webAuth_Area');?></span><br>
-							<span ><?php echo lang('Constant.webAuth_Obec');?></span><br>
-							<span ><?php echo lang('Constant.webAuth_Moe');?></span><br>
-							สงวนลิขสิทธิ์ &copy; <span data-toggle="year-copy">2022</span>
-                        </div>
+                <div class="font-size-sm mt-4 text-muted text-center">
+                <strong><?php echo lang('Constant.webTitle_full');?> : <?php echo lang('Constant.webVersion');?> </strong><br>
+							  <span ><?php echo lang('Constant.webAuth_School');?></span>
+							  <span ><?php echo lang('Constant.webAuth_Area');?></span><br>
+							  <span ><?php echo lang('Constant.webAuth_Obec');?></span><br>
+							  <span ><?php echo lang('Constant.webAuth_Moe');?></span><br>
+							  สงวนลิขสิทธิ์ &copy; <span data-toggle="year-copy">2022</span>
+                </div>
           </div>
         </div>
       </div>
