@@ -82,9 +82,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">ขอต้อนรับสู่ระบบ <span>ITA</span></h2>
-            <p data-aos="fade-up">การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ<br>(Integrity and Transparency Assessment : ITA)</p>
-			<p data-aos="fade-up">ระบบนี้เป็นระบบสำหรับรวบรวมร่องรอยในรูปแบบไฟล์เอกสาร ไฟล์รูปภาพ และอื่นๆ เพื่อรองรับการประเมิน ITA ของโรงเรียน</p>
+            <h3 data-aos="fade-down">ขอต้อนรับสู่ระบบ <span>ITA</span></h3>
+            	<p data-aos="fade-up">ระบบนี้เป็นระบบสำหรับรวบรวมร่องรอยในรูปแบบไฟล์เอกสาร ไฟล์รูปภาพ และอื่นๆ เพื่อรองรับการประเมิน ITA ของโรงเรียน</p>
             <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get Started</a>
           </div>
         </div>

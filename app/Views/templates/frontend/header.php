@@ -90,7 +90,7 @@ $request = service('request');
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('<?= base_url(); ?>/front/img/hero-carousel-page/<?=$images[$random_image];?>');">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
-        <h2><?=$title[1]?></h2>
+        <h3><?=$title[1]?></h3>
         <ol>
           <li><a href="<?= base_url();?>">Home</a></li>
           <li><?=$title[1]?></li>

@@ -133,6 +133,13 @@ section {
   font-family: var(--font-secondary);
 }
 
+.breadcrumbs h3 {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  font-family: var(--font-secondary);
+}
+
 .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
@@ -1922,6 +1929,28 @@ section {
   margin: auto;
 }
 
+.hero .info h3 {
+  color: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+}
+
+.hero .info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--color-primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 @media (max-width: 768px) {
   .hero .info h2 {
     font-size: 36px;
@@ -2058,6 +2087,29 @@ section {
 }
 
 .heromini .info h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--color-primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+.heromini .info h3 {
+  color: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+}
+
+.heromini .info h3:after {
   content: "";
   position: absolute;
   display: block;
