@@ -87,14 +87,14 @@ class ItemupModel extends Model
             ->countAllresults();
         } else if($linktype==2){
             return  $this->select('*')
-            ->where("iu_typefile ='doc' or iu_typefile ='docx' or iu_typefile ='ppt' 
-            or iu_typefile ='pptx' or iu_typefile ='xls' or iu_typefile ='xlsx' ")
+            ->where("iu_typefile ='png' or iu_typefile ='jpg' or iu_typefile ='gif' 
+            or iu_typefile ='jpeg' ")
             ->where('iu_typeup', $linkup)
             ->countAllresults();
         } else if($linktype==3){
             return  $this->select('*')
-            ->where("iu_typefile ='png' or iu_typefile ='jpg' or iu_typefile ='gif' 
-            or iu_typefile ='jpeg' ")
+            ->where("iu_typefile ='doc' or iu_typefile ='docx' or iu_typefile ='ppt' 
+            or iu_typefile ='pptx' or iu_typefile ='xls' or iu_typefile ='xlsx' ")
             ->where('iu_typeup', $linkup)
             ->countAllresults();
         } else if($linktype==4){

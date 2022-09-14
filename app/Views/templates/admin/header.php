@@ -1,5 +1,5 @@
 <?php
-$request = service('request');
+	$request = service('request');
 ?>
 <!doctype html>
 <html lang="en">
@@ -107,7 +107,7 @@ $request = service('request');
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="index.php" class="logo">
+				<a href="<?= base_url() ?>" class="logo">
 					<img src="<?= base_url() ?>/img/logo_brand.png" alt="navbar brand" class="navbar-brand" width="133">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">

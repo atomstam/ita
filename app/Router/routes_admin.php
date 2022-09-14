@@ -27,6 +27,7 @@ $routes->get("find_ItemUp_Ajax/(:num)/(:num)/(:num)/(:num)", "AdminController::F
 $routes->get("delUp_Item/(:num)/(:num)/(:num)/(:num)/(:num)/(:num)/(:num)", "AdminController::DelUp_Item/$1/$2/$3/$4/$5/$6/$7");
 $routes->get("ajax_edit_up/(:num)/(:num)/(:num)", "AdminController::Ajax_edit_up/$1/$2/$3");
 $routes->post("saveEditAllItem", "AdminController::saveEditAllItem");
+
 //item10
 $routes->get("item10/(:num)/(:num)", "AdminController::Item10/$1/$2");
 $routes->get("item10_detail/(:num)/(:num)/(:num)", "AdminController::Item10_detail/$1/$2/$3");

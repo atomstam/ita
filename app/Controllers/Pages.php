@@ -9,6 +9,7 @@ use App\Models\ItemmainModel;
 use App\Models\ItemsubModel;
 use App\Models\ItemupModel;
 use App\Models\CommModel;
+use App\Models\ChatModel;
 
 use CodeIgniter\Controller;
 
@@ -159,7 +160,6 @@ class Pages extends Controller {
         
     }
 
-
 	public function SaveComm()
 	{
 		$commModel = new CommModel;
@@ -201,6 +201,97 @@ class Pages extends Controller {
 		echo json_encode($data_c);
 
 	}
+
+    public function Chat() {
+
+        $chatModel = new ChatModel;
+
+		$data = [
+			'title' => [
+				'1' => 'ถามตอบ',
+			],                
+			'url' => [
+		        '1' => '',
+            ]
+		];
+
+        echo view('templates/frontend/header', $data);
+        echo view('frontend/chat');
+        echo view('templates/frontend/footer');
+        
+    }
+
+    public function Ajax_Chat() {
+
+		$session = session();
+        $chatModel = new ChatModel;
+
+		if($session->get('id')){
+			$data_ses = [
+				'ses_user_id' =>1,
+				'user1_name' =>$session->get('sch_code'),
+				'user2' =>2,
+				'user2_name' =>'บุคคลทั่วไป',
+			];
+		} else {
+			$data_ses = [
+				'ses_user_id' =>2,
+				'user1_name' =>'บุคคลทั่วไป',
+				'user2' =>1,
+				'user2_name' =>'Admin',
+			];
+		}
+		$session->set($data_ses);
+
+		$data = [
+	        'title' => [
+			    '1' => 'ถามตอบ',
+            ],                
+			'url' => [
+				'1' => '',
+			]
+        ];
+
+        echo json_encode($data);
+        
+    }
+
+
+	public function SaveChat()
+	{
+        $chatModel = new ChatModel;
+
+		$data = [
+			  'chat_area' =>session()->get('area_code'),
+			  'chat_code' =>session()->get('sch_code'),
+			  'chat_msg' =>$this->request->getVar('msg'),
+			  'chat_user1' =>$this->request->getVar('ses_user_id'),
+			  'user1_name' =>$this->request->getVar('user1_name'),
+			  'chat_user2' =>$this->request->getVar('ses_user_id'),
+			  'user2_name' =>$this->request->getVar('user1_name'),
+			  'ip' =>$this->request->getIPAddress(),
+			  'chat_datetime' => date('Y-m-d H:i:s')
+		];
+
+        $up=$chatModel->save($data);
+		$session = session();
+		if($up){
+			$data_c = [
+				'state' => "success",
+				'message' => 'ส่งข้อมูลสำเร็จ',
+				//'message' => $session->setFlashdata('msg', '<i class="fa fa-check-circle"></i> update สำเร็จ'),
+			];
+		} else {
+			$data_c = [
+				'state' => "error",
+				'message' => 'ไม่สามารถส่งข้อมูลได้',
+				//'message' => $session->setFlashdata('error', '<i class="fa fa-alert-circle"></i> ไม่สามารถ update ได้'),
+			];
+		}
+		echo json_encode($data_c);
+
+	}
+
 
 
 }

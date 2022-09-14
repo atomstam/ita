@@ -189,30 +189,31 @@
 	});
 	$(function() { 
 		$("button#Item-formAdd-submit").on('click', function(e) {
-			var frmdata = new FormData();
+			e.preventDefault();
+			var frmdata = new FormData($('#ItemAddForm')[0]);
     		var files = $('#iu_fileup')[0].files[0];
 			var iu_ids = $('#iu_id').val();
 			var iu_topics = $('#iu_topic').val();
 			var iu_typeups = $('#iu_typeup').val();
 			var iu_linkurls = $('#iu_linkurl').val();
+			//alert(files+"/"+iu_ids+"/"+iu_topics+"/"+iu_typeups+"/"+iu_linkurls);
     		frmdata.append('file',files);
     		frmdata.append('iu_id',iu_ids);
     		frmdata.append('iu_topic',iu_topics);
     		frmdata.append('iu_typeup',iu_typeups);
     		frmdata.append('iu_linkurl',iu_linkurls);			
-			e.preventDefault();
 				//var iu_id = $(this).val('iu_id');
-				//alert(iu_id);
+				//alert(frmdata);
 					$.ajax({
 						//method: 'GET',
 						type: "POST",
-						url: "<?php echo base_url();?>/admin/saveAllItem/",
+						url: "<?=base_url();?>/admin/saveAllItem",
 						//data: $('form.ItemAddForm').serialize(),
 						data: frmdata,
       					contentType: false,
       					processData: false,
 						//dataType: 'json',
-						//cache: false,
+						cache: false,
 						success: function(data){
 							$('#ItemAddModal').modal('hide');
 							var obj = JSON.parse(data);

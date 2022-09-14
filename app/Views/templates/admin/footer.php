@@ -1,4 +1,25 @@
-		<?php if($segments[1]=='admin' and ($segments[2] !='' or isset($segments[2])) ): echo "</div>"; endif;?>
+<?php
+    $uri = new \CodeIgniter\HTTP\URI(current_url());
+    $uri_one = '';
+	$uri_two = '';
+	$uri_tree = '';
+	$uri_four = '';
+	$uri_five = '';
+	$uri_six = '';
+    if($uri->getTotalSegments() > 0 && $uri->getSegment(1))
+        $uri_one = $uri->getSegment(1);
+    if($uri->getTotalSegments() > 1 && $uri->getSegment(2))
+	    $uri_two = $uri->getSegment(2);
+    if($uri->getTotalSegments() > 2 && $uri->getSegment(3))
+	    $uri_tree = $uri->getSegment(3);
+    if($uri->getTotalSegments() > 3 && $uri->getSegment(4))
+	    $uri_four = $uri->getSegment(4);
+    if($uri->getTotalSegments() > 4 && $uri->getSegment(5))
+	    $uri_five = $uri->getSegment(5);
+    if($uri->getTotalSegments() > 5 && $uri->getSegment(6))
+	    $uri_six = $uri->getSegment(6);
+?>
+		<?php if($uri_two=='admin' and $uri_tree !='' ): echo "</div>"; endif;?>
 		</div>
 			<footer class="footer">
 				<div class="container-fluid">

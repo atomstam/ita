@@ -14,7 +14,7 @@ use App\Models\ItemsubModel;
 use App\Models\ItemupModel;
 
 use CodeIgniter\Controller;
-
+use CodeIgniter\Files\File;
 
 class AdminController extends Controller
 {
@@ -513,14 +513,18 @@ class AdminController extends Controller
 
 		$iu_typeup = $this->request->getVar('iu_typeup');
 		if($iu_typeup=='Upload'):
-			if ($this->request->getFile('file') != ''):
-					$file = $this->request->getFile('file');
+			$file = $this->request->getFile('file');
+			if (isset($file)):
 					$iu_link = $file->getRandomName();
 					$file->move('uploads/item/', $iu_link);
-					$extension = end(explode('.',$iu_link));
+					//$extension = end(explode('.',$iu_link));
+					$ext = explode( ".", $iu_link);
+					$extension = $ext[count($ext)-1];
+					//$file_name = substr($iu_link,0,strlen($iu_link)-strlen($file_type)); 
+					//$extension = "";
 			else:
-					$iu_link = '';
-					$extension = '';
+					$iu_link = "";
+					$extension = "";
 			endif;
 			$data = [
 				  'iu_area' =>session()->get('area_code'),
@@ -558,7 +562,7 @@ class AdminController extends Controller
 		endif;
 
         $up=$itemsUpModel->save($data);
-		$session = session();
+		//$session = session();
 		if($up){
 			$data_c = [
 				'state' => "success",
@@ -697,20 +701,20 @@ class AdminController extends Controller
  
         $up=$ItemupModel->where(['iu_area'=>$area,'iu_school'=>$sch,'id'=>$upid])->delete();
         //$up=$ItemupModel->save($data);
-		$session = session();
+		//$session = session();
 		if($up){
 			$data_c = [
 				'stateDel' => "success",
-				'main' => $itemsId['it_main'],
-				'sub' => $itemsId['it_sub'],
+				'main' => $main,
+				'sub' => $sub,
 				'message' => 'ลบข้อมูลสำเร็จ',
 				//'message' => $session->setFlashdata('msg', '<i class="fa fa-check-circle"></i> update สำเร็จ'),
 			];
 		} else {
 			$data_c = [
 				'stateDel' => "error",
-				'main' => $itemsId['it_main'],
-				'sub' => $itemsId['it_sub'],
+				'main' => $main,
+				'sub' => $sub,
 				'message' => 'ไม่สามารถลบข้อมูลได้',
 				//'message' => $session->setFlashdata('error', '<i class="fa fa-alert-circle"></i> ไม่สามารถ update ได้'),
 			];
@@ -733,15 +737,19 @@ class AdminController extends Controller
 		$itemsModel = new ItemModel;
 		$itemsUpModel = new ItemupModel;
 
-		$itemsId = $itemsModel->where('id', $this->request->getVar('iu_id'))->first();
+		$itemsId = $itemsModel->where('id', $this->request->getVar('it_id'))->first();
 
 		$iu_typeup = $this->request->getVar('iu_typeup');
 		if($iu_typeup=='Upload'):
-			if ($this->request->getFile('file') != ''):
-					$file = $this->request->getFile('file');
+			$file = $this->request->getFile('file');
+			if (isset($file)):
 					$iu_link = $file->getRandomName();
 					$file->move('uploads/item/', $iu_link);
-					$extension = end(explode('.',$iu_link));
+					//$extension = end(explode('.',$iu_link));
+					$ext = explode( ".", $iu_link);
+					$extension = $ext[count($ext)-1];
+					//$file_name = substr($iu_link,0,strlen($iu_link)-strlen($file_type)); 
+					//$extension = "";
 			else:
 					$iu_link = '';
 					$extension = '';
@@ -751,7 +759,7 @@ class AdminController extends Controller
 				  //'iu_school' =>session()->get('sch_code'),
 				  //'iu_main' =>$itemsId['it_main'],
 				  //'iu_sub' =>$itemsId['it_sub'],
-				  //'iu_itemID' =>$itemsId['it_cate'],
+				  'iu_itemID' =>$itemsId['it_cate'],
 				  'iu_topic' =>$this->request->getVar('iu_topic'),
 				  //'iu_posted' =>session()->get('id'),
 				  //'iu_post_date' =>date('Y-m-d H:i:s'),
@@ -769,7 +777,7 @@ class AdminController extends Controller
 				  //'iu_school' =>session()->get('sch_code'),
 				  //'iu_main' =>$itemsId['it_main'],
 				  //'iu_sub' =>$itemsId['it_sub'],
-				  //'iu_itemID' =>$itemsId['it_cate'],
+				  'iu_itemID' =>$itemsId['it_cate'],
 				  'iu_topic' =>$this->request->getVar('iu_topic'),
 				  //'iu_posted' =>session()->get('id'),
 				  //'iu_post_date' =>date('Y-m-d H:i:s'),
@@ -782,7 +790,7 @@ class AdminController extends Controller
 		endif;
 
         $up=$itemsUpModel->update($this->request->getVar('iu_id'),$data);
-		$session = session();
+		//$session = session();
 		if($up){
 			$data_c = [
 				'state' => "success",

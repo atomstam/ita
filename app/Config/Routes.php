@@ -48,6 +48,9 @@ $routes->get('/item9_detail/(:any)/(:any)/(:any)', 'Pages::Item9_detail/$1/$2/$3
 $routes->get('/item10_detail/(:any)/(:any)/(:any)', 'Pages::Item10_detail/$1/$2/$3');
 $routes->get('/complaint', 'Pages::Complaint');
 $routes->post('/saveComm', 'Pages::SaveComm');
+$routes->get('/chat', 'Pages::Chat');
+$routes->post('/saveChat', 'Pages::SaveChat');
+$routes->get('/ajax_chat', 'Pages::Ajax_Chat');
 
 $routes->get('/users', 'Users::index');
 

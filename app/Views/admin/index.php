@@ -308,13 +308,13 @@
 					$.ajax({
 						//method: 'GET',
 						type: "POST",
-						url: "<?php echo base_url();?>/admin/saveAllItem/",
+						url: "<?php echo base_url();?>/admin/saveAllItem",
 						//data: $('form.ItemAddForm').serialize(),
 						data: frmdata,
       					contentType: false,
       					processData: false,
 						//dataType: 'json',
-						//cache: false,
+						cache: false,
 						success: function(data){
 							$('#ItemAddModal').modal('hide');
 							var obj = JSON.parse(data);

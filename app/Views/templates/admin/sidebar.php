@@ -1,8 +1,23 @@
 <?php
-		$uri = current_url(true);
-		//echo (string) $uri;  // http://example.com/index.php
-		$segments = $uri->getSegments(); 
-		//echo $segments[1]."-".$segments[2] ;
+    $uri = new \CodeIgniter\HTTP\URI(current_url());
+    $uri_one = '';
+	$uri_two = '';
+	$uri_tree = '';
+	$uri_four = '';
+	$uri_five = '';
+	$uri_six = '';
+    if($uri->getTotalSegments() > 0 && $uri->getSegment(1))
+        $uri_one = $uri->getSegment(1);
+    if($uri->getTotalSegments() > 1 && $uri->getSegment(2))
+	    $uri_two = $uri->getSegment(2);
+    if($uri->getTotalSegments() > 2 && $uri->getSegment(3))
+	    $uri_tree = $uri->getSegment(3);
+    if($uri->getTotalSegments() > 3 && $uri->getSegment(4))
+	    $uri_four = $uri->getSegment(4);
+    if($uri->getTotalSegments() > 4 && $uri->getSegment(5))
+	    $uri_five = $uri->getSegment(5);
+    if($uri->getTotalSegments() > 5 && $uri->getSegment(6))
+	    $uri_six = $uri->getSegment(6);
 ?>
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">			
@@ -48,7 +63,7 @@
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item <?php if($segments[1]=='admin' and ($segments[2]=='' or !isset($segments[2])) ): echo "active"; endif;?>">
+						<li class="nav-item <?php if($uri_two=='admin' and ($uri_tree=='' or !isset($uri_tree)) ): echo "active"; endif;?>">
 							<a href="<?= base_url(); ?>/admin" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>หน้าแรก</p>
@@ -60,35 +75,35 @@
 							</span>
 							<h4 class="text-section">จัดการระบบ</h4>
 						</li>-->
-						<li class="nav-item <?php if($segments[1]=='admin' and $segments[2]=='item9' or ($segments[5]>0 and $segments[5]<34)): echo "active"; endif;?>">
+						<li class="nav-item <?php if($uri_two=='admin' and $uri_tree=='item9' or ($uri_six>0 and $uri_six<34)): echo "active"; endif;?>">
 							<a data-toggle="collapse" href="#O9" class="collapsed" aria-expanded="false">
 								<i class="fas fa-layer-group"></i>
 								<p>9.การเปิดเผยข้อมูล</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse <?php if($segments[1]=='admin' and $segments[2]=='item9' or ($segments[5]>0 and $segments[5]<34)): echo "show"; endif;?>" id="O9">
+							<div class="collapse <?php if($uri_two=='admin' and $uri_tree=='item9' or ($uri_six>0 and $uri_six<34)): echo "show"; endif;?>" id="O9">
 								<ul class="nav nav-collapse">
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item9' and $segments[3]=='1' and $segments[4]=='1' or ($segments[5] >0 and $segments[5]<10) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item9' and $uri_four=='1' and $uri_five=='1' or ($uri_six >0 and $uri_six<10) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item9/1/1')?>">
 											<span class="sub-item">9.1 ข้อมูลพื้นฐาน</span>
 										</a>
 									</li>
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item9' and $segments[3]=='1' and $segments[4]=='2' or ($segments[5] >9 and $segments[5]<18) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item9' and $uri_four=='1' and $uri_five=='2' or ($uri_six >9 and $uri_six<18) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item9/1/2')?>">
 											<span class="sub-item">9.2 การบริหารงาน</span>
 										</a>
 									</li>
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item9' and $segments[3]=='1' and $segments[4]=='3' or ($segments[5] >17 and $segments[5]<25) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item9' and $uri_four=='1' and $uri_five=='3' or ($uri_six >17 and $uri_six<25) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item9/1/3')?>">
 											<span class="sub-item">9.3 การเงินงบประมาณ</span>
 										</a>
 									</li>
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item9' and $segments[3]=='1' and $segments[4]=='4' or ($segments[5] >24 and $segments[5]<29) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item9' and $uri_four=='1' and $uri_five=='4' or ($uri_six >24 and $uri_six<29) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item9/1/4')?>">
 											<span class="sub-item">9.4 การพัฒนาบุคคล</span>
 										</a>
 									</li>
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item9' and $segments[3]=='1' and $segments[4]=='5' or ($segments[5] >28 and $segments[5]<34) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item9' and $uri_four=='1' and $uri_five=='5' or ($uri_six >28 and $uri_six<34) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item9/1/5')?>">
 											<span class="sub-item">9.5 ส่งเสริมความโปร่งใส</span>
 										</a>
@@ -96,20 +111,20 @@
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item <?php if($segments[1]=='admin' and $segments[2]=='item10' or ($segments[5]>33 and $segments[5]<44)): echo "active"; endif;?>">
+						<li class="nav-item <?php if($uri_two=='admin' and $uri_tree=='item10' or ($uri_six>33 and $uri_six<44)): echo "active"; endif;?>">
 							<a data-toggle="collapse" href="#O10" class="collapsed" aria-expanded="false">
 								<i class="fas fa-th-list"></i>
 								<p>10.ป้องกันการทุจริต</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse <?php if($segments[1]=='admin' and $segments[2]=='item10' or ($segments[5]>33 and $segments[5]<44)): echo "show"; endif;?>" id="O10">
+							<div class="collapse <?php if($uri_two=='admin' and $uri_tree=='item10' or ($uri_six>33 and $uri_six<44)): echo "show"; endif;?>" id="O10">
 								<ul class="nav nav-collapse">
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item10' and $segments[3]=='2' and $segments[4]=='1' or ($segments[5] >33 and $segments[5]<42) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item10' and $uri_four=='2' and $uri_five=='1' or ($uri_six >33 and $uri_six<42) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item10/2/1')?>">
 											<span class="sub-item">10.1 เจตจำนงผู้บริหาร</span>
 										</a>
 									</li>
-									<li class="<?php if($segments[1]=='admin' and $segments[2]=='item10' and $segments[3]=='2' and $segments[4]=='2' or ($segments[5] >41 and $segments[5]<44) ): echo "active"; endif;?>">
+									<li class="<?php if($uri_two=='admin' and $uri_tree=='item10' and $uri_four=='2' and $uri_five=='2' or ($uri_six >41 and $uri_six<44) ): echo "active"; endif;?>">
 										<a href="<?=base_url('admin/item10/2/2')?>">
 											<span class="sub-item">10.2 มาตรเพื่อป้องกัน</span>
 										</a>
@@ -123,13 +138,13 @@
 							</span>
 							<h4 class="text-section">ข้อมูลส่วตัว</h4>
 						</li>-->
-						<li class="nav-item <?php if($segments[1]=='admin' and $segments[2]=='profile' ): echo "active"; endif;?>">
+						<li class="nav-item <?php if($uri_two=='admin' and $uri_tree=='profile' ): echo "active"; endif;?>">
 							<a  href="<?= base_url(session()->get('role').'/profile')?>">
 								<i class="fas fa-user"></i>
 								<p>ข้อมูลส่วนตัว</p>
 							</a>
 						</li>
-						<li class="nav-item <?php if($segments[1]=='admin' and $segments[2]=='changePassword' ): echo "active"; endif;?>">
+						<li class="nav-item <?php if($uri_two=='admin' and $uri_tree=='changePassword' ): echo "active"; endif;?>">
 							<a  href="<?= base_url(session()->get('role').'/changePassword')?>">
 								<i class="fas fa-key"></i>
 								<p>เปลี่ยนรหัสผ่าน</p>
@@ -149,6 +164,6 @@
 
 		<div class="main-panel">
 			<div class="content">
-			<?php if($segments[1]=='admin' and ($segments[2] !='' or isset($segments[2])) ): echo "<div class=\"page-inner\">"; endif;?>
+			<?php if($uri_two=='admin' and $uri_tree !='' ): echo "<div class=\"page-inner\">"; endif;?>
 
 			

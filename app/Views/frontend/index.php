@@ -1,3 +1,9 @@
+<?php
+$request = service('request');
+$uri = current_url(true);
+//echo (string) $uri;  // http://example.com/index.php
+$segments = $uri->getSegments(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +74,27 @@
         <ul>
           <li><a href="<?=base_url();?>" class="active">หน้าแรก</a></li>
           <li><a href="<?=base_url();?>/complaint">ส่งเรื่องร้องเรียน</a></li>
+		  <li><a href="<?=base_url();?>/chat">ถามตอบ</a></li>
+		  <?php if(session()->get('id')): ?>
+          <li class="dropdown"><a href="#">
+		  						<div class="avatar-sm">
+								<?php if(!empty(session()->get('imageProfile'))): ?>
+									<img src="<?= base_url() ?>/uploads/profile/<?=session()->get('imageProfile');?>" class="avatar-img rounded-circle">
+								<?php else:  ?>
+									<img src="<?= base_url() ?>/uploads/profile/no_image.jpg" class="avatar-img rounded-circle">
+								<?php endif ?>
+								</div>
+		  <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="<?= base_url('/admin'); ?>">จัดการระบบ</a></li>
+              <li><a href="<?= base_url('/admin/profile'); ?>">ข้อมูลส่วนตัว</a></li>
+              <li><a href="<?= base_url('/admin/changePassword'); ?>">เปลี่ยนรหัสผ่าน</a></li>
+              <li><a href="<?= base_url('/logout'); ?>">ออกจาระบบ</a></li>
+            </ul>
+          </li>
+		<?php else: ?>
           <li><a href="<?=base_url();?>/login">เข้าระบบ</a></li>
+		<?php endif; ?>
         </ul>
       </nav><!-- .navbar -->
 

@@ -189,7 +189,7 @@
 	});
 	$(function() { 
 		$("button#Item-formAdd-submit").on('click', function(e) {
-			var frmdata = new FormData();
+			var frmdata = new FormData($('#ItemAddForm')[0]);
     		var files = $('#iu_fileup')[0].files[0];
 			var iu_ids = $('#iu_id').val();
 			var iu_topics = $('#iu_topic').val();
@@ -206,13 +206,13 @@
 					$.ajax({
 						//method: 'GET',
 						type: "POST",
-						url: "<?php echo base_url();?>/admin/saveAllItem/",
+						url: "<?php echo base_url();?>/admin/saveAllItem",
 						//data: $('form.ItemAddForm').serialize(),
 						data: frmdata,
       					contentType: false,
       					processData: false,
 						//dataType: 'json',
-						//cache: false,
+						cache: false,
 						success: function(data){
 							$('#ItemAddModal').modal('hide');
 							var obj = JSON.parse(data);
